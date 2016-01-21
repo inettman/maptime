@@ -4,16 +4,15 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class RegionTest extends TestCase
 {
     /**
-     * A basic functional test example.
      *
      * @return void
      */
     public function testBasicExample()
     {
-        $response = $this->call('GET', '/');
+        $response = $this->call('GET', '/region/1');
 
         $this->assertEquals(200, $response->status());
         
