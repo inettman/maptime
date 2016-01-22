@@ -67,6 +67,9 @@
 
             <footer>
                 <p>&copy; {{trans('master.site_name')}} 2014 - {{date('Y')}}</p>
+                <p style="float:right">
+                 <script src="{{ asset('js/li.js') }}"></script>
+              </p>
             </footer>
 
         </div><!--/.container-->
@@ -76,6 +79,7 @@
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
             <script src="{{ asset('js/ie10-viewport-bug-workaround.js') }}"></script>
             <script src="{{ asset('js/offcanvas.js') }}"></script>
+            <script src="{{ asset('js/analytics.js') }}"></script>
             <script src="{{ asset('js/activeLink.js') }}"></script>
         @show
     </body>
