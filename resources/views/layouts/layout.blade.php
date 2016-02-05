@@ -9,6 +9,18 @@
     </ul>
 @endsection
 
+@section('search')
+    <p>
+        <input name="test" id="search" class="form-control input-lg" placeholder="{{ trans('master.search_placeholder') }}" data-href="{{ route('search')}}">
+    </p>
+@endsection
+
+@section('js')
+    @parent
+    <script src="{{ asset('js/bootstrap3-typeahead.js') }}"></script>
+    <script src="{{ asset('js/search.js') }}"></script>
+@endsection
+
 @section('sidebar')
     <div class="list-group">
         @foreach ($sidebarCities as $row)

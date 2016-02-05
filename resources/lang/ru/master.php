@@ -21,4 +21,5 @@ return [
     'latitude' => 'Широта',
     'longitude' => 'Долгота',
     'encors_title' => 'Точное текущее время в других городах',
+    'search_placeholder' => 'Поиск по городу'
 ];

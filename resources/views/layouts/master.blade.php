@@ -54,6 +54,7 @@
                     
                     @yield('breadcrumbs')
                     <h1>@yield('h1')</h1>
+                    @yield('search')
                     @yield('content')
                     @yield('encors')
                 </div><!--/.col-xs-12.col-sm-9-->

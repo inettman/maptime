@@ -71,6 +71,21 @@ class CityController extends Controller
         return view('city.show', ['city' => $city, 'time' => $time]);
     }
 
+    public function search(Request $request)
+    {
+        $cities = City::searchByName($request->query->get('q'))->get();
+
+        $result = [];
+        foreach($cities as $row) {
+            $country = isset($row->region->parent->name)?' > '.$row->region->parent->name:'';
+            $result[] = [
+                'value' => $row->name.' > '.$row->region->name.$country,
+                'href' => route('city', ['id'=> $row->id]),
+            ];
+        }
+        return $result;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

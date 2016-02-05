@@ -10,13 +10,8 @@ class City extends Model
      *
      * @var array 
      */
-    private $sidebarCities;
-    
-    public function __construct()
-    {
-        $this->sidebarCities = [18687, 71711, 7551, 182, 821, 8036, 8622, 64456, 8375, 8375, 8264, 9367, 8170, 9100, 45];
-    }
-    
+    private $sidebarCities = [18687, 71711, 7551, 182, 821, 8036, 8622, 64456, 8375, 8375, 8264, 9367, 8170, 9100, 45];
+
     /**
      * Get region
      */
@@ -44,5 +39,15 @@ class City extends Model
     public function scopeSidebar($query)
     {
         return $query->whereIn('id',$this->sidebarCities)->orderBy('name');
+    }
+
+    /**
+     * Sidebar list
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSearchByName($query, $name)
+    {
+        return $query->where('name', 'LIKE', '%' . $name . '%')->orderBy('name')->take(10);
     }
 }
