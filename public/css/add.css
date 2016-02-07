@@ -8,3 +8,6 @@
 .banner {
     margin-bottom:10px;
 }
+.bookmarks * {
+    box-sizing: content-box;
+}

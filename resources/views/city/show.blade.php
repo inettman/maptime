@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    
+    @include('bookmarks.original')
     <h2>{{ trans('city.title_map', array('city' => $city->name)) }}</h2>
     @include('banners.adsense')
     <div class="map_container">
