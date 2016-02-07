@@ -14,7 +14,8 @@
 Route::get('/', 'RegionController@index')->name('home');
 Route::get('region/{id}', 'RegionController@show')->name('region');
 Route::get('city/{id}', 'CityController@show')->name('city');
-Route::get('search', 'CityController@search')->name('search');
+Route::get('search', 'SearchController@searchCities')->name('search');
+
 Route::get('location/town-{id}', function($id)
 {
     return Redirect::route('city', array($id));
