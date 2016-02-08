@@ -26,7 +26,7 @@ class Geonames implements Time
      */
     private $geonamesLogins = ['inettman', 'inettman2'];
 
-    const GEONAMES_HOST = 'http://ws.geonames.org/timezoneJSON';
+    const GEONAMES_HOST = 'http://api.geonames.org/timezoneJSON';
 
     /**
      * 
@@ -43,7 +43,7 @@ class Geonames implements Time
      * @return mixed
      */
     public function getTimeByCoordinates($lat, $lng)
-    {   
+    {
         foreach ($this->geonamesLogins as $row) {
             $options = [
                 'query' => [
@@ -53,9 +53,9 @@ class Geonames implements Time
                     'style' => 'full'
                 ]
             ];
-            
+
             $geonamesBody = $this->httpClient->get(self::GEONAMES_HOST, $options)->getBody();
-        
+
             $result = $this->serializer->deserialize($geonamesBody, 'App\Time', 'json');
             if (!empty($result->getTime())) {
                 break;
