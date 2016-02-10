@@ -10,7 +10,7 @@
     <ul class="list-group">
         @foreach ($regions as $region)
             <li class="list-group-item">
-                <h4><a href="{{ route('region', array('id'=>$region->id)) }}">{{ $region->name }}</a></h4>
+                <a href="{{ route('region', array('id'=>$region->id)) }}">{{ $region->name }}</a>
             </li>
         @endforeach
     </ul>
