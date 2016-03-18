@@ -4,7 +4,6 @@ jQuery(document).ready(function () {
         source: function (typeahead, query) {
             return $.get($('#search').data('href')+'?q='+query,
                 function (response) {
-                    console.log(response);
                     return typeahead.process(response);
                 }
             );
